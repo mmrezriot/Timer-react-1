@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import TimeList from './time'
+import { timesContext } from './contex'
 
 
 var interval ;
@@ -19,6 +20,8 @@ class Timer extends React.Component {
 
 }
   }
+
+  static contextType = timesContext;
 
 
   
@@ -70,7 +73,7 @@ let s = this.state.seconds;
 let m = this.state.minutes;
 let h = this.state.hours;
 let newT = `${s > 9 ? s : "0"+ s} : ${m > 9 ? m : "0"+ m} : ${h > 9 ? h : "0"+ h}`
-this.props.setTimes([...this.props.times , newT]);
+this.context.setTimes([...this.context.times , newT]);
 
 }
 
@@ -110,7 +113,7 @@ render(){
 </div>
 
 <TimeList>
-  {this.props.times}
+  {this.context.times}
  
 </TimeList>
 
