@@ -2,7 +2,7 @@ import React from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import TimeList from './time'
+
 import { timesContext } from './contex'
 
 
@@ -112,10 +112,6 @@ render(){
   <button id="reset-btn" onClick={this.seveTime}>چاپ</button>
 </div>
 
-<TimeList>
-  {this.context.times}
- 
-</TimeList>
 
     </>
   )
